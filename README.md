@@ -1,12 +1,12 @@
 ## Technical Test Exercise
 
 #### Test Strategy
-The test strategy can be found at 
+[Test Strategy](TestStrategy.md) 
 
 #### Tests
 The tests are written as Cucumber features and scenarios using Gherkin syntax
 
-* Electron App scenarios:
-* Webservices scenarios:
-* Python preprocessor scenarios:
-* AI Model scenarios:
+* [Electron App scenarios](features/electron_app.feature)
+* [Webservices scenarios](features/webservices.feature)
+* [Python preprocessor scenarios](features/python_preprocessor.feature)
+* [AI Model scenarios](features/ai_model.feature)
