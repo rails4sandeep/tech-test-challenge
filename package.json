@@ -1,0 +1,17 @@
+{
+  "name": "electron-app-ui-tests",
+  "version": "1.0.0",
+  "description": "sample UI tests for Electron App",
+  "main": "",
+  "scripts": {
+    "test": "npx jest --testTimeout=30000"
+  },
+  "keywords": [],
+  "author": "Sandeep Kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "webdriverio": "^6.1.14",
+    "chromedriver": "83.0.0"
+  }
+}
