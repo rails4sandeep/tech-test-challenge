@@ -10,7 +10,7 @@ From my understanding of the test example, the platform architecture involves
 2. A database to store the images and model data
 3. A webservice to process requests and serve responses
 4. An external system PACS that provides raw data for training of the AI
-5. A python program that procesess raw image data and feeds to the AI model backend service through the webservice
+5. A python program that processes raw image data and feeds to the AI model backend service through the webservice
 6. An electron based desktop app that sends a request for analysis and receives processed results from the AI model
 
 ### Assumptions
