@@ -1,5 +1,5 @@
 electronApp = {
-    image: '#image',
+    requestResults: '#RequestResults',
     finding1: '#lung-finding-one',
     finding2: '#lung-finding-two',
     errorNoResponse: '#errorNoResponse',
