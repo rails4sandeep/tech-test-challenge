@@ -70,8 +70,31 @@ And the app UI should not highlight the Lung Finding 2 page element
 Scenario: invalid response received
 Given I am a user with valid account
 And I am logged into the electron app
-When I receive the response that is an error
+When I receive the response that is not in the expected format
 Then the app should display an error
 And it should not hightlight either of the page elements Lung Finding 1 or Lung Finding 2
+
+Scenario: image not found
+  Given I am a user with valid account
+  And I am logged into the electron app
+  When I receive the response that refers to an image url that does not contain the image
+  Then the app should display an error
+  And it should not hightlight either of the page elements Lung Finding 1 or Lung Finding 2
+
+Scenario: invalid finding id
+  Given I am a user with valid account
+  And I am logged into the electron app
+  When I receive the response that has the image data refer to findingId that is neither 1 nor 2
+  Then the app should display an error
+  And it should not hightlight either of the page elements Lung Finding 1 or Lung Finding 2
+
+Scenario: invalid value for critical
+  Given I am a user with valid account
+  And I am logged into the electron app
+  When I receive the response that has the critical attribute in findings Array has a value that is neither true nor false
+  Then the app should display an error
+  And it should not hightlight either of the page elements Lung Finding 1 or Lung Finding 2
+
+
 
 
