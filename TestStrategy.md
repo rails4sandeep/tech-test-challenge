@@ -4,8 +4,8 @@ The architecture diagram and details sent in the email are the references for th
 I noticed a missing arrow representing the Webservice requesting data from the DB. There is an arrow present that 
 represents the DB sending data to the Webservices. 
 
-For this test strategy I am assuming that the webservices process the request data received from the electron app, 
-send a request to the db and db sends back the requested information. 
+For this test strategy, I am assuming that the Webservices process the request data received from the electron app, 
+send a request to the DB and DB sends back the requested information. 
 
 ### Platform Architecture
 
@@ -63,17 +63,16 @@ The targets for the specification-based testing are
 
 **Cross Platform Testing:** The electron app should be tested on the potential combination of operating systems and devices. If there is a list of supported devices and operating systems, it can be utilized for this.
 
-**Load Testing:** The platform can be load tested at the web services layer. This load testing can be from 
-* capacity planning measuring the load the platform can handle with current capacity and planning for future
-* response time measurements - the time it takes for the requests to receive responses under various load conditions
+**Load Testing:** The platform can be load tested at the web services layer. This load testing can be 
+* Capacity planning measuring the load, the platform can handle with current capacity and planning for future
+* Response time measurements - the time it takes for the requests to receive responses under various load conditions
 
 **Risk-based testing:** Risk-based testing is an approach to testing where we list down the risks associated with the platform. The risks are sorted
-in the order of severity. The severity of the risk is assigned based on the chance of risk happening and the impact it creates when it happens. The risk-based test coverage list provides us with a framework to refer to when we have to do make critical decisions under severe deadlines, bring the product to market to
-compete with similar products, demand from the clients. 
+in the order of severity. The severity of the risk is assigned based on the chance of risk happening and the impact it creates when it happens. The risk-based test coverage list provides us with a framework to refer to when we have to make critical decisions under severe deadlines, bring the product to market to compete with similar products, demand from the clients. 
 
 #### Automated vs manual testing
 
-All the specification and dynamic test technique based tests are targets for automated testing. Assuming the components mentioned as targets for this are designed from testability point of view, automating as much of this testing as possible will provide us with a way to continuously test, gather metrics, monitor quality and release frequently. 
+All the specification and dynamic test technique based tests are targets for automated testing. Assuming the components mentioned as targets for this are designed from testability point of view, automating as much testing as possible will provide us with a way to continuously test, gather metrics, monitor quality and release frequently. 
 
 * Web Services: Automated tests for user authentication, validation of data, acceptable ranges of data, handling of exceptions, error scenarios, use cases that are automatable and repeatable. The automated tests at API level are robust, fast and reliable compared to testing at the UI level. Because of the quick feedback they give compared to UI based tests, these tests can be configured to be run on demand on CI/CD for automatic approval and declining of merges
 * Electron App: Automated UI tests to test the electron app. Authentication, use cases involving users uploading images, making requests for results, receiving results, usability, display of data in various screen resolutions. These tests can usually be run nightly on CI/CD
@@ -118,13 +117,5 @@ It is difficult to comment on the tools to use for automated testing of the pre-
 * The UI elements do not have a strategy to be accessible easily by the automated test tool - *Work with the front end developers to add test automation related attributes to the page elements* 
 * Poor exception handling at the API level. Exceptions occurring are not propagated properly to the front end. The user is left wondering with no feedback, either success or failure. - *Write extensive exception scenarios in the API tests, work with the engineering team to handle them*
 * Poor documentation of the API leading to spending lot of time to research the APIs, requests and responses. - *Work with the engineering team to improve the API documentation*
-
-
-
-
-
-
-
-
 
 
