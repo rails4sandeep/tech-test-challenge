@@ -18,7 +18,7 @@ describe('Electron App', () => {
 
     it('should highlight the red finding 2 page element if the result received from webservice is critical', async () => {
         await page.goto('https://electron-app.harrison.ai');
-        await page.clickElement(electronApp.image);
+        await page.clickElement(electronApp.requestResults+'Critical');
         await page.waitForElement(page.getElementByXpath(electronApp.finding2));
         const critical = await page.getAttributeValue(page.getElementByXpath(electronApp.finding2),'highlighted');
         expect(critical).toBe('true');
@@ -26,7 +26,7 @@ describe('Electron App', () => {
 
     it('should highlight the green finding 1 page element if the result received from webservice is not critical', async () => {
         await page.goto('https://electron-app.harrison.ai');
-        await page.clickElement(electronApp.image);
+        await page.clickElement(electronApp.requestResults+'NotCritical');
         await page.waitForElement(page.getElementByXpath(electronApp.finding1));
         const critical = await page.getAttributeValue(page.getElementByXpath(electronApp.finding1),'highlighted');
         expect(critical).toBe('true');
@@ -34,21 +34,21 @@ describe('Electron App', () => {
 
     it('should show an error message if there is a time out from the webservice', async () => {
         await page.goto('https://electron-app.harrison.ai');
-        await page.clickElement(electronApp.image);
+        await page.clickElement(electronApp.requestResults+'Timeout');
         const isElementDisplayed = await page.isElementDisplayed(page.getElementByXpath(electronApp.errorTimeout));
         expect(isElementDisplayed).toBe('true');
     });
 
     it('should show an error message if the electron app loses the internet connection', async () => {
         await page.goto('https://electron-app.harrison.ai');
-        await page.clickElement(electronApp.image);
+        await page.clickElement(electronApp.requestResults+'NoInternetConnection');
         const isElementDisplayed = await page.isElementDisplayed(page.getElementByXpath(electronApp.errorNoInternet));
         expect(isElementDisplayed).toBe('true');
     });
 
     it('should show an error message if there is an error response received from the webservice', async () => {
         await page.goto('https://electron-app.harrison.ai');
-        await page.clickElement(electronApp.image);
+        await page.clickElement(electronApp.requestResults+'Error');
         const isElementDisplayed = await page.isElementDisplayed(page.getElementByXpath(electronApp.errorResponseFromWS));
         expect(isElementDisplayed).toBe('true');
     });
