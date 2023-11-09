@@ -12,6 +12,6 @@
   "devDependencies": {
     "jest": "^26.0.1",
     "webdriverio": "^6.1.14",
-    "chromedriver": "83.0.0"
+    "chromedriver": "119.0.1"
   }
 }
